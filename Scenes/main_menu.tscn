@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://clft7u5631lyq" path="res://Scripts/main_menu.gd" id="1_28flt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2erdr"]
+
 [node name="MainMenu" type="Control" unique_id=577969510]
 layout_mode = 3
 anchors_preset = 15
@@ -20,17 +22,64 @@ color = Color(0.105882354, 0.1254902, 0.15686275, 1)
 [node name="BtnStartGame" type="Button" parent="." unique_id=2140193083]
 layout_mode = 0
 offset_left = 408.0
-offset_top = 304.0
+offset_top = 248.0
 offset_right = 744.0
-offset_bottom = 416.0
+offset_bottom = 360.0
 theme_override_font_sizes/font_size = 25
 text = "Spustit hru"
+
+[node name="BtnNapoveda" type="Button" parent="." unique_id=1036445300]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 392.0
+offset_right = 744.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 25
+text = "Jak hrát
+"
 
 [node name="TitleLabel" type="Label" parent="." unique_id=1163174621]
 layout_mode = 0
 offset_left = 328.0
-offset_top = 176.0
+offset_top = 136.0
 offset_right = 821.0
-offset_bottom = 245.0
+offset_bottom = 205.0
 theme_override_font_sizes/font_size = 50
 text = "Wood Mining Clicker"
+
+[node name="NapovedaPanel" type="ColorRect" parent="." unique_id=153640668]
+visible = false
+layout_mode = 0
+offset_left = 232.0
+offset_top = 104.0
+offset_right = 936.0
+offset_bottom = 552.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextNapovedy" type="Label" parent="NapovedaPanel" unique_id=1571764316]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 48.0
+offset_right = 630.0
+offset_bottom = 349.0
+theme_override_font_sizes/font_size = 25
+text = "Vítejte, pane! Naším cílem je postavit hrad. 
+
+Klikejte a těžte dřevo.  
+
+Kupujte pily, které budou těžit za vás.
+
+Vyměňte dřevo za vzácný kámen. 
+Shromážděte 50 dřeva a 5 kamenů k vítězství!"
+
+[node name="BtnZavritNapovedu" type="Button" parent="NapovedaPanel" unique_id=1421466638]
+layout_mode = 0
+offset_left = 304.0
+offset_top = 376.0
+offset_right = 396.0
+offset_bottom = 426.0
+theme_override_colors/font_color = Color(0.78039217, 0.05490196, 0.14117648, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_2erdr")
+text = "Zavřít
+"
