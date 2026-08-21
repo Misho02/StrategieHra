@@ -42,10 +42,10 @@ text = "Kámen: 0"
 
 [node name="BtnTezitDrevo" type="Button" parent="." unique_id=690081807]
 layout_mode = 0
-offset_left = 832.0
-offset_top = 432.0
-offset_right = 1104.0
-offset_bottom = 592.0
+offset_left = 816.0
+offset_top = 320.0
+offset_right = 1088.0
+offset_bottom = 480.0
 theme_override_font_sizes/font_size = 40
 text = "Těžit dřevo"
 icon = ExtResource("1_tw5go")
@@ -56,10 +56,10 @@ expand_icon = true
 
 [node name="BtnKoupitPilu" type="Button" parent="." unique_id=1400478570]
 layout_mode = 0
-offset_left = 48.0
-offset_top = 296.0
-offset_right = 288.0
-offset_bottom = 430.0
+offset_left = 136.0
+offset_top = 144.0
+offset_right = 376.0
+offset_bottom = 278.0
 theme_override_font_sizes/font_size = 25
 text = "Koupit pilu 
 (Cena: 10 dřeva)"
@@ -71,10 +71,10 @@ expand_icon = true
 
 [node name="BtnTezitKamen" type="Button" parent="." unique_id=1661343593]
 layout_mode = 0
-offset_left = 16.0
-offset_top = 480.0
-offset_right = 314.0
-offset_bottom = 614.0
+offset_left = 104.0
+offset_top = 320.0
+offset_right = 402.0
+offset_bottom = 454.0
 theme_override_font_sizes/font_size = 25
 text = "Těžit kámen 
 (Vyžaduje: 50 dřeva)
@@ -88,9 +88,9 @@ expand_icon = true
 [node name="BtnPostavitOsadu" type="Button" parent="." unique_id=2133123839]
 layout_mode = 0
 offset_left = 424.0
-offset_top = 496.0
+offset_top = 104.0
 offset_right = 726.0
-offset_bottom = 609.0
+offset_bottom = 217.0
 theme_override_font_sizes/font_size = 25
 text = "Postavit osadu 
 (500 dřeva, 500 kamene)"
@@ -104,10 +104,19 @@ expand_icon = true
 autostart = true
 
 [node name="OsadaObrazek" type="TextureRect" parent="." unique_id=1136477077]
-visible = false
+layout_mode = 0
+offset_left = 424.0
+offset_top = 240.0
+offset_right = 720.0
+offset_bottom = 504.0
+texture = ExtResource("4_t1kww")
+
+[node name="BtnZpetDoMenu" type="Button" parent="." unique_id=1324988358]
 layout_mode = 0
 offset_left = 432.0
-offset_top = 184.0
-offset_right = 728.0
-offset_bottom = 448.0
-texture = ExtResource("4_t1kww")
+offset_top = 544.0
+offset_right = 709.0
+offset_bottom = 607.0
+theme_override_font_sizes/font_size = 40
+text = "Zpět do menu"
+flat = true
