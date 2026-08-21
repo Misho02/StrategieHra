@@ -142,3 +142,38 @@ theme_override_font_sizes/font_size = 30
 
 [node name="ZvukSekani" type="AudioStreamPlayer" parent="." unique_id=1857797103]
 stream = ExtResource("6_myk6s")
+
+[node name="PotvrzeniPanel" type="ColorRect" parent="." unique_id=152825923]
+visible = false
+layout_mode = 0
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 1064.0
+offset_bottom = 608.0
+color = Color(0, 0, 0, 1)
+
+[node name="DotazLabel" type="Label" parent="PotvrzeniPanel" unique_id=1057021425]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 152.0
+offset_right = 712.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 25
+
+[node name="BtnAno" type="Button" parent="PotvrzeniPanel" unique_id=300654902]
+layout_mode = 0
+offset_left = 240.0
+offset_top = 328.0
+offset_right = 440.0
+offset_bottom = 384.0
+text = "Ano"
+
+[node name="BtnNe" type="Button" parent="PotvrzeniPanel" unique_id=299896441]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 328.0
+offset_right = 712.0
+offset_bottom = 384.0
+text = "Ne
+
+"

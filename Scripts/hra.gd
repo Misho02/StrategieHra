@@ -6,12 +6,15 @@ var pocet_pil: int = 0
 var cena_pily: int = 10 
 var hra_vyhrana: bool = false 
 
+# NOVINKA: Paměť pro naše vyskakovací okno
+var akce_k_potvrzeni: String = "" 
+
 func _ready() -> void:
-	# Skrytí vítězných prvků na začátku hry
 	$OsadaObrazek.visible = false
-	$BtnZpetDoMenu.visible = false 
+	$PotvrzeniPanel.visible = false # Skryjeme okno s dotazem
 	
-	# Napojení všech tlačítek a časovače
+	# Smazali jsme skrývání tlačítka Zpět do menu, teď už je tam natrvalo
+	
 	$BtnTezitDrevo.pressed.connect(_on_tezit_drevo)
 	$BtnKoupitPilu.pressed.connect(_on_koupit_pilu)
 	$BtnTezitKamen.pressed.connect(_on_tezit_kamen)
@@ -21,25 +24,25 @@ func _ready() -> void:
 	$BtnZpetDoMenu.pressed.connect(_on_btn_zpet_do_menu_pressed)
 	$BtnReset.pressed.connect(_on_btn_reset_pressed)
 	
+	# NOVINKA: Napojení tlačítek Ano a Ne uvnitř panelu
+	$PotvrzeniPanel/BtnAno.pressed.connect(_on_btn_ano_pressed)
+	$PotvrzeniPanel/BtnNe.pressed.connect(_on_btn_ne_pressed)
+	
 	aktualizuj_ui()
 
 func aktualizuj_ui() -> void:
-	# Pokud už jsme vyhráli, UI se nesmí přepisovat
 	if hra_vyhrana:
 		return 
 
-	# Texty pro suroviny a ceny
 	$DrevoLabel.text = "Dřevo: " + str(drevo)
 	$KamenLabel.text = "Kámen: " + str(kamen)
 	$BtnKoupitPilu.text = "Koupit pilu (+2 dřeva/s)\n(Cena: " + str(cena_pily) + " dřeva)"
 	
-	# Výpočet Progress Baru
 	var postup_drevo = min(float(drevo) / 50.0, 1.0)
 	var postup_kamen = min(float(kamen) / 5.0, 1.0)
 	var celkove_procento = ((postup_drevo + postup_kamen) / 2.0) * 100.0
 	$UkazatelPokroku.value = celkove_procento
 
-	# Logika pro zešednutí (vypnutí/zapnutí) tlačítek
 	if drevo >= cena_pily:
 		$BtnKoupitPilu.disabled = false
 	else:
@@ -61,7 +64,6 @@ func aktualizuj_ui() -> void:
 
 func _on_tezit_drevo() -> void:
 	drevo += 1
-	# Pokud se tvůj uzel zvuku jmenuje jinak, uprav název níže:
 	$ZvukSekani.play() 
 	aktualizuj_ui()
 
@@ -85,12 +87,9 @@ func _on_postavit_osadu() -> void:
 		
 		hra_vyhrana = true 
 		
-		# Vizuální odměna za vítězství
 		$OsadaObrazek.visible = true 
-		$BtnZpetDoMenu.visible = true 
 		$UkazatelPokroku.value = 100.0
 		
-		# Změna textu a trvalé uzamčení všech tlačítek
 		$BtnPostavitOsadu.text = "VÍTĚZSTVÍ!\nKrálovství je postaveno."
 		$BtnPostavitOsadu.disabled = true 
 		$BtnTezitDrevo.disabled = true 
@@ -104,10 +103,27 @@ func _on_casovac_timeout() -> void:
 		drevo += (pocet_pil * 2)
 		aktualizuj_ui()
 
-# Tlačítko pro konec hry (Návrat do menu)
-func _on_btn_zpet_do_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+# --- NOVINKA: LOGIKA POTVRZOVACÍHO OKNA ---
 
-# Tlačítko Reset pro rychlé vrácení hry na začátek
+func _on_btn_zpet_do_menu_pressed() -> void:
+	# Místo okamžitého odchodu jen ukážeme okno a nastavíme akci
+	akce_k_potvrzeni = "menu"
+	$PotvrzeniPanel/DotazLabel.text = "Opravdu chcete odejít do menu?\nZtratíte aktuální postup."
+	$PotvrzeniPanel.visible = true
+
 func _on_btn_reset_pressed() -> void:
-	get_tree().reload_current_scene()
+	# Místo okamžitého resetu jen ukážeme okno a nastavíme akci
+	akce_k_potvrzeni = "reset"
+	$PotvrzeniPanel/DotazLabel.text = "Opravdu chcete začít znovu?\nVšechny suroviny budou ztraceny."
+	$PotvrzeniPanel.visible = true
+
+func _on_btn_ano_pressed() -> void:
+	# Hráč klikl na ANO, vykonáme to, na co se ptal
+	if akce_k_potvrzeni == "menu":
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+	elif akce_k_potvrzeni == "reset":
+		get_tree().reload_current_scene()
+
+func _on_btn_ne_pressed() -> void:
+	# Hráč klikl na NE, okno se jen schová a hraje se dál
+	$PotvrzeniPanel.visible = false
