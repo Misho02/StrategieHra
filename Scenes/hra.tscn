@@ -42,10 +42,10 @@ text = "Kámen: 0"
 
 [node name="BtnTezitDrevo" type="Button" parent="." unique_id=690081807]
 layout_mode = 0
-offset_left = 816.0
-offset_top = 320.0
-offset_right = 1088.0
-offset_bottom = 480.0
+offset_left = 800.0
+offset_top = 408.0
+offset_right = 1072.0
+offset_bottom = 568.0
 theme_override_font_sizes/font_size = 40
 text = "Těžit dřevo"
 icon = ExtResource("1_tw5go")
@@ -113,10 +113,28 @@ texture = ExtResource("4_t1kww")
 
 [node name="BtnZpetDoMenu" type="Button" parent="." unique_id=1324988358]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 544.0
-offset_right = 709.0
-offset_bottom = 607.0
+offset_left = 800.0
+offset_top = 272.0
+offset_right = 1077.0
+offset_bottom = 335.0
 theme_override_font_sizes/font_size = 40
 text = "Zpět do menu"
 flat = true
+
+[node name="BtnReset" type="Button" parent="." unique_id=621343060]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 184.0
+offset_right = 1103.0
+offset_bottom = 247.0
+theme_override_font_sizes/font_size = 40
+text = "Restartovat hru"
+flat = true
+
+[node name="UkazatelPokroku" type="ProgressBar" parent="." unique_id=1385436232]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 528.0
+offset_right = 736.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 30
