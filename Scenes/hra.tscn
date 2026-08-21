@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://biyrobjog1hu4"]
+
+[ext_resource type="Script" uid="uid://dj37o5yrnxyin" path="res://Scripts/hra.gd" id="1_necdr"]
+[ext_resource type="Texture2D" uid="uid://bahqjsksmi7di" path="res://Assets/battered-axe.png" id="1_tw5go"]
+[ext_resource type="Texture2D" uid="uid://bbuu02xsi7x0a" path="res://Assets/circular-saw.png" id="2_necdr"]
+[ext_resource type="Texture2D" uid="uid://cay8qxma4j1hq" path="res://Assets/rock.png" id="3_myk6s"]
+[ext_resource type="Texture2D" uid="uid://cf7btvupyh00k" path="res://Assets/castle.png" id="4_t1kww"]
+
+[node name="Hra" type="Control" unique_id=1096171195]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_necdr")
+
+[node name="Background" type="ColorRect" parent="." unique_id=635847162]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.105882354, 0.1254902, 0.15686275, 1)
+
+[node name="DrevoLabel" type="Label" parent="." unique_id=403859704]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 32.0
+offset_right = 520.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 30
+text = "Dřevo: 0"
+
+[node name="KamenLabel" type="Label" parent="." unique_id=1226117299]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 32.0
+offset_right = 751.0
+offset_bottom = 74.0
+rotation = -0.0028087508
+theme_override_font_sizes/font_size = 30
+text = "Kámen: 0"
+
+[node name="BtnTezitDrevo" type="Button" parent="." unique_id=690081807]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 240.0
+offset_right = 720.0
+offset_bottom = 408.0
+theme_override_font_sizes/font_size = 40
+text = "Těžit dřevo"
+icon = ExtResource("1_tw5go")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="BtnKoupitPilu" type="Button" parent="." unique_id=1400478570]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 96.0
+offset_right = 1104.0
+offset_bottom = 230.0
+theme_override_font_sizes/font_size = 25
+text = "Koupit pilu 
+(Cena: 10 dřeva)"
+icon = ExtResource("2_necdr")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="BtnTezitKamen" type="Button" parent="." unique_id=1661343593]
+layout_mode = 0
+offset_left = 832.0
+offset_top = 264.0
+offset_right = 1130.0
+offset_bottom = 398.0
+theme_override_font_sizes/font_size = 25
+text = "Těžit kámen 
+(Vyžaduje: 50 dřeva)
+"
+icon = ExtResource("3_myk6s")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="BtnPostavitOsadu" type="Button" parent="." unique_id=2133123839]
+layout_mode = 0
+offset_left = 824.0
+offset_top = 448.0
+offset_right = 1126.0
+offset_bottom = 561.0
+theme_override_font_sizes/font_size = 25
+text = "Postavit osadu 
+(500 dřeva, 500 kamene)"
+icon = ExtResource("4_t1kww")
+flat = true
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="CasovacTezby" type="Timer" parent="." unique_id=1313613983]
+autostart = true
