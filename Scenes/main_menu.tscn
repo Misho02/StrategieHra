@@ -2,7 +2,22 @@
 
 [ext_resource type="Script" uid="uid://clft7u5631lyq" path="res://Scripts/main_menu.gd" id="1_28flt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
+bg_color = Color(0.22745098, 0.26666668, 0.32941177, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48xlc"]
+bg_color = Color(0.22745098, 0.26666668, 0.32941177, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2erdr"]
+bg_color = Color(0.22745098, 0.26666668, 0.32941177, 1)
 
 [node name="MainMenu" type="Control" unique_id=577969510]
 layout_mode = 3
@@ -26,6 +41,7 @@ offset_top = 248.0
 offset_right = 744.0
 offset_bottom = 360.0
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_28flt")
 text = "Spustit hru"
 
 [node name="BtnNapoveda" type="Button" parent="." unique_id=1036445300]
@@ -35,6 +51,7 @@ offset_top = 392.0
 offset_right = 744.0
 offset_bottom = 504.0
 theme_override_font_sizes/font_size = 25
+theme_override_styles/normal = SubResource("StyleBoxFlat_48xlc")
 text = "Jak hrát
 "
 
@@ -54,7 +71,7 @@ offset_left = 232.0
 offset_top = 104.0
 offset_right = 936.0
 offset_bottom = 552.0
-color = Color(0, 0, 0, 1)
+color = Color(0.14117648, 0.16862746, 0.20784314, 1)
 
 [node name="TextNapovedy" type="Label" parent="NapovedaPanel" unique_id=1571764316]
 layout_mode = 0
@@ -62,6 +79,7 @@ offset_left = 80.0
 offset_top = 48.0
 offset_right = 630.0
 offset_bottom = 349.0
+theme_override_colors/font_color = Color(0.972549, 0.9764706, 0.98039216, 1)
 theme_override_font_sizes/font_size = 25
 text = "Vítejte, pane! Naším cílem je postavit hrad. 
 
@@ -78,7 +96,6 @@ offset_left = 304.0
 offset_top = 376.0
 offset_right = 396.0
 offset_bottom = 426.0
-theme_override_colors/font_color = Color(0.78039217, 0.05490196, 0.14117648, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_2erdr")
 text = "Zavřít
