@@ -1,6 +1,5 @@
 extends Control
 
-# Zkontroluj si, že se tvá herní scéna jmenuje přesně takto (pokud ne, uprav cestu)
 const GAME_SCENE_PATH = "res://Scenes/hra.tscn"
 
 func _ready() -> void:
