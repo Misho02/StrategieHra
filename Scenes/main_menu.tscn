@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://d20qlhbvwnafj"]
+
+[ext_resource type="Script" uid="uid://clft7u5631lyq" path="res://Scripts/main_menu.gd" id="1_28flt"]
+
+[node name="MainMenu" type="Control" unique_id=577969510]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="Background" type="ColorRect" parent="." unique_id=867287548]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.105882354, 0.1254902, 0.15686275, 1)
+
+[node name="BtnStartGame" type="Button" parent="." unique_id=2140193083]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 304.0
+offset_right = 744.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 25
+text = "Spustit hru"
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1163174621]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 176.0
+offset_right = 821.0
+offset_bottom = 245.0
+theme_override_font_sizes/font_size = 50
+text = "Wood Mining Clicker"
